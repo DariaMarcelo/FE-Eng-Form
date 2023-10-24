@@ -1,0 +1,43 @@
+<div>
+  <form class="container" [formGroup]="frontendEngineerForm" (ngSubmit)="submitForm()">
+    <mat-form-field>
+      <input matInput formControlName="firstName" placeholder="Name" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="lastName" placeholder="Lastname" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" placeholder="Date of Birth" required>
+      <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+      <mat-datepicker #dobPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>FE technology</mat-label>
+      <mat-select formControlName="framework" required>
+        <mat-option *ngFor="let tech of frameworkOptions" [value]="tech">{{ tech }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>FE technology version</mat-label>
+      <mat-select formControlName="frameworkVersion">
+        <mat-option *ngFor="let version of frameworkVersions" [value]="version">{{ version }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="email" placeholder="Email" required>
+      <mat-error *ngIf="frontendEngineerForm.get('email')?.hasError('showEmailAlreadyExists')">Email already exists!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="hobbies" placeholder="Hobbies">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+</div>

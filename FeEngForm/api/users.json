@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Petro",
+      "lastName": "Pupkin",
+      "dateOfBirth": "23-11-1990",
+      "framework": "angular",
+      "frameworkVersion": "1.2.1",
+      "email": "test@test.test",
+      "hobbies": [
+        "football",
+        "tennis"
+      ]
+    },
+    {
+      "id": "2",
+      "firstName": "Taras",
+      "lastName": "Shevchenko",
+      "dateOfBirth": "09-03-1814",
+      "framework": "angular",
+      "frameworkVersion": "1.2.1",
+      "email": "t.shevchenko@gmail.com",
+      "hobbies": [
+        "Writing"
+      ]
+    },
+    {
+      "id": "3",
+      "firstName": "Liudmyla",
+      "lastName": "Bilousova",
+      "dateOfBirth": "27-09-2000",
+      "framework": "react",
+      "frameworkVersion": "2.1.2",
+      "email": "lely45@gmail.com",
+      "hobbies": [
+        "Singing"
+      ]
+    }
+  ]
+}
