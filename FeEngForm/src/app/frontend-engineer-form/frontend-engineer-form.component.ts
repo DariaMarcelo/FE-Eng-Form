@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from "../services/users.service";
+import { EmailValidator } from "../validators/async-validators";
 
 export interface FrontendEngineerData {
   firstName: FormControl<string | null>;
@@ -21,7 +22,8 @@ export class FrontendEngineerFormComponent {
   frontendEngineerForm: FormGroup<FrontendEngineerData>;
   frameworkOptions = ['angular', 'react', 'vue'];
   frameworkVersions: string[] = [];
-  showEmailAlreadyExists = false;
+  formSubmitted = false;
+
 
   constructor(private fb: FormBuilder, private userService: UserService) {
     this.frontendEngineerForm = this.fb.group({
@@ -30,14 +32,25 @@ export class FrontendEngineerFormComponent {
       dateOfBirth: ['' as (Date | string), Validators.required],
       framework: [null as (string | null), Validators.required],
       frameworkVersion: [''],
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [Validators.required, Validators.email],
+        [EmailValidator.emailExists(userService)]
+      ],
       hobbies: ['']
     });
 
     this.frontendEngineerForm.get('framework')?.valueChanges.subscribe((framework) => {
-      this.frontendEngineerForm.get('frameworkVersion')?.setValue('');
       this.frameworkVersions = this.getFrameworkVersions(framework as string);
     });
+  }
+
+  get email() {
+    return this.frontendEngineerForm.get('email');
+  }
+
+  get showEmailAlreadyExists() {
+    return this.email?.hasError('showEmailAlreadyExists');
   }
 
   getFrameworkVersions(framework: string): string[] {
@@ -58,34 +71,11 @@ export class FrontendEngineerFormComponent {
       const formData = this.getFormattedDataToSend();
       console.log(formData);
 
-      await this.checkUserExists()
-      if (this.showEmailAlreadyExists) {
-        return;
-      }
       this.userService.addUser(formData).subscribe(response => {
+        this.formSubmitted = true;
+        this.frontendEngineerForm.reset();
       });
     }
-  }
-
-  private async checkUserExists() {
-    return new Promise((res, rej) => {
-      const email = this.frontendEngineerForm.get('email')?.value;
-      if (!email) {
-        return;
-      }
-
-      this.userService.checkEmailExists(email).subscribe(emailExists => {
-        if (emailExists) {
-          this.frontendEngineerForm.get('email')?.setErrors({emailExists: true});
-          this.showEmailAlreadyExists = true;
-          res(true)
-        } else {
-          this.frontendEngineerForm.get('email')?.setErrors(null);
-          this.showEmailAlreadyExists = false;
-          res(false)
-        }
-      });
-    })
   }
 
   getFormattedDataToSend() {

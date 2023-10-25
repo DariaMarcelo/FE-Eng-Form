@@ -37,7 +37,9 @@ export class UserService {
 
   public checkEmailExists(email: string): Observable<boolean> {
     return this.http.get<FrontendEngineerData[]>(`${this.userApiUrl}?email=${email}`)
-      .pipe(map(users => users.length > 0));
+      .pipe(
+        map(users => users.length > 0)
+      );
   }
 
 }

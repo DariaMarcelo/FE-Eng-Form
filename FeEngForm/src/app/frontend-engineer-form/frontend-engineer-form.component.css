@@ -5,3 +5,9 @@
   height: 80vh;
 }
 
+.success-message {
+  font-size: 20px;
+  color: darkgreen;
+  padding-bottom: 10px;
+}
+

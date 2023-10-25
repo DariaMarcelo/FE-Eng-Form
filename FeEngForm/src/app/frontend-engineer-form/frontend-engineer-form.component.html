@@ -29,13 +29,14 @@
 
   <mat-form-field>
     <input matInput formControlName="email" placeholder="Email" required>
-    <mat-error *ngIf="frontendEngineerForm.get('email')?.hasError('showEmailAlreadyExists')">Email already exists!
-    </mat-error>
+    <mat-error *ngIf="showEmailAlreadyExists">Email already exists!</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <input matInput formControlName="hobbies" placeholder="Hobbies">
   </mat-form-field>
+
+  <div *ngIf="formSubmitted" class="success-message">The form has been sent!</div>
 
   <button type="submit" mat-raised-button color="primary">Submit</button>
 </form>
