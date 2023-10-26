@@ -11,3 +11,12 @@
   padding-bottom: 10px;
 }
 
+.hobby-input {
+  display: flex;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+

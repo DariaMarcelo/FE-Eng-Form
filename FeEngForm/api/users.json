@@ -166,6 +166,19 @@
       "email": "test@gmail.com",
       "hobbies": "football",
       "id": "sTEZ1WE"
+    },
+    {
+      "firstName": "Daryna",
+      "lastName": "Marcelo",
+      "dateOfBirth": "22-8-1998",
+      "framework": "react",
+      "frameworkVersion": "3.2.4",
+      "email": "daryna@gmail.com",
+      "hobbies": [
+        "reading",
+        "boxing"
+      ],
+      "id": "uAt2bgR"
     }
   ]
 }

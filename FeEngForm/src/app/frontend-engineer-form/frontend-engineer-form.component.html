@@ -32,9 +32,18 @@
     <mat-error *ngIf="showEmailAlreadyExists">Email already exists!</mat-error>
   </mat-form-field>
 
-  <mat-form-field>
-    <input matInput formControlName="hobbies" placeholder="Hobbies">
-  </mat-form-field>
+  <div formArrayName="hobbies">
+    <div *ngFor="let hobby of hobbies.controls; let i = index" class="hobby-input">
+      <mat-form-field class="full-width">
+        <input matInput [formControlName]="i" placeholder="Hobby {{ i + 1 }}" required>
+        <button mat-icon-button color="warn" (click)="removeHobby(i)" class="remove-icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addHobby()">Add Hobby</button>
 
   <div *ngIf="formSubmitted" class="success-message">The form has been sent!</div>
 

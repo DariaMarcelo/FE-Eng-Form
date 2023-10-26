@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from "../services/users.service";
-import { EmailValidator } from "../validators/async-validators";
+import { FormBuilder, FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
+import { UserService } from '../services/users.service';
+import { EmailValidator } from '../validators/async-validators';
 
 export interface FrontendEngineerData {
   firstName: FormControl<string | null>;
@@ -10,7 +10,7 @@ export interface FrontendEngineerData {
   framework: FormControl<string | null>;
   frameworkVersion: FormControl<string | null>;
   email: FormControl<string | null>;
-  hobbies: FormControl<string | null>;
+  hobbies: FormArray;
 }
 
 @Component({
@@ -24,7 +24,6 @@ export class FrontendEngineerFormComponent {
   frameworkVersions: string[] = [];
   formSubmitted = false;
 
-
   constructor(private fb: FormBuilder, private userService: UserService) {
     this.frontendEngineerForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -37,7 +36,7 @@ export class FrontendEngineerFormComponent {
         [Validators.required, Validators.email],
         [EmailValidator.emailExists(userService)]
       ],
-      hobbies: ['']
+      hobbies: this.fb.array([])
     });
 
     this.frontendEngineerForm.get('framework')?.valueChanges.subscribe((framework) => {
@@ -87,5 +86,17 @@ export class FrontendEngineerFormComponent {
     }
 
     return data;
+  }
+
+  addHobby() {
+    this.hobbies.push(this.fb.control(''));
+  }
+
+  removeHobby(index: number) {
+    this.hobbies.removeAt(index);
+  }
+
+  get hobbies(): FormArray {
+    return this.frontendEngineerForm.get('hobbies') as FormArray;
   }
 }
