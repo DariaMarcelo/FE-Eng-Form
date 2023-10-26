@@ -1,0 +1,52 @@
+<form class="container" [formGroup]="frontendEngineerForm" (ngSubmit)="submitForm()">
+  <mat-form-field>
+    <input matInput formControlName="firstName" placeholder="Name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="lastName" placeholder="Lastname" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" placeholder="Date of Birth" required>
+    <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+    <mat-datepicker #dobPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>FE technology</mat-label>
+    <mat-select formControlName="framework" required>
+      <mat-option *ngFor="let tech of frameworkOptions" [value]="tech">{{ tech }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>FE technology version</mat-label>
+    <mat-select formControlName="frameworkVersion">
+      <mat-option *ngFor="let version of frameworkVersions" [value]="version">{{ version }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="email" placeholder="Email" required>
+    <mat-error *ngIf="showEmailAlreadyExists">Email already exists!</mat-error>
+  </mat-form-field>
+
+  <div formArrayName="hobbies">
+    <div *ngFor="let hobby of hobbies.controls; let i = index" class="hobby-input">
+      <mat-form-field class="full-width">
+        <input matInput [formControlName]="i" placeholder="Hobby {{ i + 1 }}" required>
+        <button mat-icon-button color="warn" (click)="removeHobby(i)" class="remove-icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addHobby()">Add Hobby</button>
+
+  <div *ngIf="formSubmitted" class="success-message">The form has been sent!</div>
+
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
+

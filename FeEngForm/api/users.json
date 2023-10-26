@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Petro",
+      "lastName": "Pupkin",
+      "dateOfBirth": "23-11-1990",
+      "framework": "angular",
+      "frameworkVersion": "1.2.1",
+      "email": "test@test.test",
+      "hobbies": [
+        "football",
+        "tennis"
+      ]
+    },
+    {
+      "id": "2",
+      "firstName": "Taras",
+      "lastName": "Shevchenko",
+      "dateOfBirth": "09-03-1814",
+      "framework": "angular",
+      "frameworkVersion": "1.2.1",
+      "email": "t.shevchenko@gmail.com",
+      "hobbies": [
+        "Writing"
+      ]
+    },
+    {
+      "id": "3",
+      "firstName": "Liudmyla",
+      "lastName": "Bilousova",
+      "dateOfBirth": "27-09-2000",
+      "framework": "react",
+      "frameworkVersion": "2.1.2",
+      "email": "lely45@gmail.com",
+      "hobbies": [
+        "Singing"
+      ]
+    },
+    {
+      "firstName": "Nameeee",
+      "lastName": "Lasssssst",
+      "dateOfBirth": "5-2-1997",
+      "framework": "react",
+      "frameworkVersion": "4.3.1",
+      "email": "email@gmail.com",
+      "hobbies": "hobby",
+      "id": "elFz7sP"
+    },
+    {
+      "firstName": "Name",
+      "lastName": "Lastname",
+      "dateOfBirth": "16-2-2002",
+      "framework": "vue",
+      "frameworkVersion": "5.2.1",
+      "email": "emailname@gmail.com",
+      "hobbies": "singing",
+      "id": "SVxYsVZ"
+    },
+    {
+      "firstName": "Name",
+      "lastName": "Lastname",
+      "dateOfBirth": "12-6-1996",
+      "framework": "react",
+      "frameworkVersion": "4.3.1",
+      "email": "myemail@gmail.com",
+      "hobbies": "hobby",
+      "id": "_4ifFCf"
+    },
+    {
+      "firstName": "Test",
+      "lastName": "Test",
+      "dateOfBirth": "17-7-1974",
+      "framework": "vue",
+      "frameworkVersion": "5.2.1",
+      "email": "emailemaile@gmail.com",
+      "hobbies": "hobby",
+      "id": "PjOjY_E"
+    },
+    {
+      "firstName": "Name",
+      "lastName": "Last",
+      "dateOfBirth": "17-10-2023",
+      "framework": "react",
+      "frameworkVersion": "3.2.4",
+      "email": "emailesasa@gmail.com",
+      "hobbies": "hobby",
+      "id": "YIX6AY_"
+    },
+    {
+      "firstName": "name",
+      "lastName": "asadasd",
+      "dateOfBirth": "25-6-1969",
+      "framework": "react",
+      "frameworkVersion": "3.2.4",
+      "email": "email@email.com",
+      "hobbies": "dsdds",
+      "id": "8azVupP"
+    },
+    {
+      "firstName": "name",
+      "lastName": "lastname",
+      "dateOfBirth": "14-11-2002",
+      "framework": "react",
+      "frameworkVersion": "4.3.1",
+      "email": "email@test.com",
+      "hobbies": "noasd",
+      "id": "aEgIwyB"
+    },
+    {
+      "firstName": "dfgadf",
+      "lastName": "fadfdfa",
+      "dateOfBirth": "11-7-2002",
+      "framework": "react",
+      "frameworkVersion": "3.2.4",
+      "email": "lelweeq@gmail.com",
+      "hobbies": "dcfadsfdsf",
+      "id": "ul7flN5"
+    },
+    {
+      "firstName": "sdasfd",
+      "lastName": "saddasd",
+      "dateOfBirth": "6-6-2001",
+      "framework": "vue",
+      "frameworkVersion": "5.2.1",
+      "email": "wqwee@gmail.com",
+      "hobbies": "dqwsdqws",
+      "id": "0FwvDfR"
+    },
+    {
+      "firstName": "dasdasd",
+      "lastName": "fasdfads",
+      "dateOfBirth": "10-6-1998",
+      "framework": "react",
+      "frameworkVersion": "4.3.1",
+      "email": "elaedfasd@gmail.com",
+      "hobbies": "hobby",
+      "id": "b2H0gMS"
+    },
+    {
+      "firstName": "cdsfadsf",
+      "lastName": "dasdasd",
+      "dateOfBirth": "2-6-1998",
+      "framework": "react",
+      "frameworkVersion": "3.2.4",
+      "email": "lelya45@gmail.com",
+      "hobbies": "sdasd",
+      "id": "48b9RdI"
+    },
+    {
+      "firstName": "dsqad",
+      "lastName": "sadsd",
+      "dateOfBirth": "18-7-1974",
+      "framework": "react",
+      "frameworkVersion": "2.1.2",
+      "email": "lesda@gmail.com",
+      "hobbies": "asdad",
+      "id": "maJxwn4"
+    },
+    {
+      "firstName": "TestName",
+      "lastName": "Lastname",
+      "dateOfBirth": "27-2-1997",
+      "framework": "react",
+      "frameworkVersion": "2.1.2",
+      "email": "test@gmail.com",
+      "hobbies": "football",
+      "id": "sTEZ1WE"
+    },
+    {
+      "firstName": "Daryna",
+      "lastName": "Marcelo",
+      "dateOfBirth": "22-8-1998",
+      "framework": "react",
+      "frameworkVersion": "3.2.4",
+      "email": "daryna@gmail.com",
+      "hobbies": [
+        "reading",
+        "boxing"
+      ],
+      "id": "uAt2bgR"
+    }
+  ]
+}
